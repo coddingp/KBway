@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable-v24/ic_driver_photo.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable-v24/ic_line.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable-v24/ic_main_screen_lines.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_back_arrow_dark.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_bus_lacation.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_icon.xml" value="0.3345" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_it_academy.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/drawable/ic_user_location.xml" value="0.1" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/activity_maps.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/activity_root.xml" value="0.15625" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/driver_info.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/fragment_blank.xml" value="0.3109375" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/fragment_settings.xml" value="0.328125" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/fragment_user_map.xml" value="0.5525" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/root_activity.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/route_button_item.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/settings.xml" value="0.31979166666666664" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/user_first_screen.xml" value="0.67" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/user_map.xml" value="0.21739130434782608" />
+        <entry key="..\:/Users/Thed/AndroidStudioProjects/KBway/app/src/main/res/layout/user_route.xml" value="0.31979166666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:id="@+id/settingsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/settings"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/themTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="0dp"
+            android:text="@string/dark_them"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/switchCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/light_black"
+                app:layout_constraintBottom_toBottomOf="@id/switchCardView"
+                app:layout_constraintStart_toStartOf="@id/switchCardView"
+                app:layout_constraintTop_toTopOf="@id/switchCardView"
+                app:trackTint="@color/light_black" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/line4ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/dark_white"
+        android:contentDescription="@string/division_line"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_line" />
+
+    <TextView
+        android:id="@+id/supportTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginVertical="8dp"
+        android:text="@string/technical_support"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/line5ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginVertical="16dp"
+        android:background="@color/dark_white"
+        android:contentDescription="@string/division_line"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_line" />
+
+    <TextView
+        android:id="@+id/playStoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginVertical="8dp"
+        android:text="@string/play_store_review"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/line6ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="start"
+        android:layout_marginVertical="16dp"
+        android:background="@color/dark_white"
+        android:contentDescription="@string/division_line"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_line" />
+
+</LinearLayout>
