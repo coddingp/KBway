@@ -14,4 +14,9 @@ object Utils {
         ButtonData("Маршрут - 8"),
         ButtonData("Маршрут - 9")
     )
+
+    const val BASE_URL = "http://188.225.44.132:5000/"
+
+    var countActivityDestructions = 0
+
 }
