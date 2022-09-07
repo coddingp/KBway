@@ -2,7 +2,6 @@ package com.example.kbway.userSettings
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import android.content.Context.MODE_WORLD_READABLE
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -25,7 +24,7 @@ class SettingsFragment : BaseFragment(R.layout.user_route) {
         super.onAttach(context)
         val modeSharedPreferences: SharedPreferences =
             requireActivity().getSharedPreferences(sharedPreferencesFile, MODE_PRIVATE)
-        (activity as AppCompatActivity).delegate.localNightMode=
+        (activity as AppCompatActivity).delegate.localNightMode =
             modeSharedPreferences.getInt("nightMode", AppCompatDelegate.MODE_NIGHT_YES)
     }
 
@@ -59,7 +58,6 @@ class SettingsFragment : BaseFragment(R.layout.user_route) {
                         .edit()
                 modeEditor.putInt("nightMode", AppCompatDelegate.MODE_NIGHT_YES)
                 modeEditor.apply()
-
 
                 try {
                     (activity as PostMan).fragmentMail(AppCompatDelegate.MODE_NIGHT_YES)
