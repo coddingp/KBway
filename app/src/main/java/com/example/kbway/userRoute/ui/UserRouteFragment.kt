@@ -1,24 +1,28 @@
 package com.example.kbway.userRoute.ui
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kbway.R
-import com.example.kbway.common.mvp.BaseFragment
+import com.example.kbway.common.mvp.BaseFragmentMvp
 import com.example.kbway.databinding.UserRouteBinding
 import com.example.kbway.userMap.UserMapFragment
-import com.example.kbway.userRoute.model.ButtonData
+import com.example.kbway.userRoute.model.AllRouteData
 import com.example.kbway.userRoute.ui.adapter.RouteAdapter
+import org.koin.android.ext.android.inject
 
-class UserRouteFragment : BaseFragment(R.layout.user_route) {
+class UserRouteFragment :
+    BaseFragmentMvp<RouteContract.View, RouteContract.Presenter>(R.layout.user_route),
+    RouteContract.View {
 
     private lateinit var binding: UserRouteBinding
 
+    override val presenter: RoutePresenter by inject()
+
     private val userRecyclerAdapter: RouteAdapter by lazy {
-        RouteAdapter(onClick = { showZoomedItem(it) })
+        RouteAdapter(onClick = { showItemMap(it) })
     }
 
     override fun onCreateView(
@@ -32,15 +36,20 @@ class UserRouteFragment : BaseFragment(R.layout.user_route) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        buttonRecycler.layoutManager = LinearLayoutManager(requireContext())
-        buttonRecycler.adapter = userRecyclerAdapter
+        presenter.getRoutesList()
+        buttonRecycler?.layoutManager = LinearLayoutManager(requireContext())
+        buttonRecycler?.adapter = userRecyclerAdapter
     }
 
-    private fun showZoomedItem(name: ButtonData) {
+    private fun showItemMap(routeName: AllRouteData.AllRouteDataItem) {
         val fragment = UserMapFragment()
         val bundle = Bundle()
-        bundle.putParcelable("name", name)
+        bundle.putParcelable("name", routeName)
         fragment.arguments = bundle
         changeFragment(fragment, R.id.contentContainer)
+    }
+
+    override fun showRoutesList(data: List<AllRouteData.AllRouteDataItem?>) {
+        userRecyclerAdapter.setData(data)
     }
 }

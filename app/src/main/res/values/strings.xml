@@ -35,6 +35,7 @@
     <string name="btn_back_to_map">Вернуться к карте </string>
     <string name="btn_start">НАЧАТЬ ></string>
     <string name="welcome_text">Добро пожаловать! </string>
+    <string name="api_key">AIzaSyCabJkI1Cs3L3ovPp_BLfFyCEBF6bdrClw</string>
     <string name="login_main">Введите свои данные </string>
     <string name="login_fio">ФИО </string>
     <string name="login_phone">Номер телефона </string>

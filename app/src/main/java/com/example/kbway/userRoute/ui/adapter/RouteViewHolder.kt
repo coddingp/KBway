@@ -4,17 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kbway.databinding.RouteButtonItemBinding
-import com.example.kbway.userRoute.model.ButtonData
+import com.example.kbway.userRoute.model.AllRouteData
 
 class RouteViewHolder(
     val binding: RouteButtonItemBinding,
-    val onClick: (ButtonData) -> Unit
+    val onClick: (AllRouteData.AllRouteDataItem) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
-
 
     constructor(
         parent: ViewGroup,
-        onClick: (ButtonData) -> Unit
+        onClick: (AllRouteData.AllRouteDataItem) -> Unit
     ) : this(
         RouteButtonItemBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
@@ -22,8 +21,8 @@ class RouteViewHolder(
     )
 
 
-    fun bindItem(buttonData: ButtonData) {
-        binding.routeTextView.text = buttonData.name
+    fun bindItem(buttonData: AllRouteData.AllRouteDataItem) {
+        binding.routeTextView.text = "Маршрут - ${buttonData.routeNumber}"
         binding.routeTextView.setOnClickListener {
             onClick.invoke(buttonData)
         }

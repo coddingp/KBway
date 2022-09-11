@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.kbway.R
 import com.example.kbway.databinding.UserMapBinding
-import com.example.kbway.userRoute.model.ButtonData
+import com.example.kbway.userRoute.model.AllRouteData
 import com.example.kbway.userSettings.SettingsFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -74,11 +74,11 @@ class UserMapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val data =
-            arguments?.getParcelable<ButtonData>("name")
+            arguments?.getParcelable<AllRouteData.AllRouteDataItem?>("name")
         if (data != null) {
             context?.let {
                 try {
-                    binding.routTextView.text = data.name
+                    binding.routTextView.text = "Маршрут - ${data.routeNumber}"
                 } catch (e: Exception) {
                     Timber.e("Bad data input $e")
                 }
@@ -109,7 +109,7 @@ class UserMapFragment : Fragment() {
         return BitmapDescriptorFactory.fromBitmap(bitmap)
     }
 
-    fun changeFragment(fragment: Fragment, id: Int) {
+    private fun changeFragment(fragment: Fragment, id: Int) {
         val fragmentManager = requireActivity().supportFragmentManager
         val fragmentTransaction1: FragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction1.addToBackStack(null)

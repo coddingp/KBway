@@ -2,14 +2,14 @@ package com.example.kbway.userRoute.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kbway.userRoute.model.ButtonData
-import com.example.kbway.utils.Utils.userRouteButtons
+import com.example.kbway.userRoute.model.AllRouteData
+import timber.log.Timber
 
 class RouteAdapter(
-    val onClick: (ButtonData) -> Unit
+    val onClick: (AllRouteData.AllRouteDataItem) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val data = userRouteButtons
+    private val listOfData = mutableListOf<AllRouteData.AllRouteDataItem?>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         RouteViewHolder(parent, onClick)
@@ -17,11 +17,16 @@ class RouteAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is RouteViewHolder -> {
-                holder.bindItem(data[position])
+                listOfData[position]?.let { holder.bindItem(it) }
             }
         }
     }
 
-    override fun getItemCount() = data.size
+    override fun getItemCount() = listOfData.size
 
+    fun setData(data: List<AllRouteData.AllRouteDataItem?>) {
+        listOfData.clear()
+        listOfData.addAll(data)
+        notifyDataSetChanged()
+    }
 }
