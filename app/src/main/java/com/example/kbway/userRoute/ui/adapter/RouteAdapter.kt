@@ -3,7 +3,6 @@ package com.example.kbway.userRoute.ui.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kbway.userRoute.model.AllRouteData
-import timber.log.Timber
 
 class RouteAdapter(
     val onClick: (AllRouteData.AllRouteDataItem) -> Unit

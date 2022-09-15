@@ -29,7 +29,7 @@ class UserRouteFragment :
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = UserRouteBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,8 +37,8 @@ class UserRouteFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
         presenter.getRoutesList()
-        buttonRecycler?.layoutManager = LinearLayoutManager(requireContext())
-        buttonRecycler?.adapter = userRecyclerAdapter
+        buttonRecycler.layoutManager = LinearLayoutManager(requireContext())
+        buttonRecycler.adapter = userRecyclerAdapter
     }
 
     private fun showItemMap(routeName: AllRouteData.AllRouteDataItem) {
