@@ -4,14 +4,15 @@ package com.example.kbway.root
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatDelegate
+import com.example.kbway.BackToSettingsScreenMail
 import com.example.kbway.FirstScreenMail
 import com.example.kbway.NightModeMail
 import com.example.kbway.common.mvp.BaseActivity
 import com.example.kbway.userFirstScreen.UserFirstFragment
 import com.example.kbway.userRoute.ui.UserRouteFragment
+import com.example.kbway.userSettings.SettingsFragment
 
-class RootActivity : BaseActivity(), NightModeMail, FirstScreenMail {
+class RootActivity : BaseActivity(), NightModeMail, FirstScreenMail, BackToSettingsScreenMail {
 
     private val sharedActivityPreference = "Activity Preference Data"
 
@@ -26,31 +27,48 @@ class RootActivity : BaseActivity(), NightModeMail, FirstScreenMail {
         super.onStart()
         val activitySharedPreferences: SharedPreferences =
             this@RootActivity.getSharedPreferences(sharedActivityPreference, MODE_PRIVATE)
+
         this.delegate.localNightMode =
-            activitySharedPreferences.getInt("mode", AppCompatDelegate.MODE_NIGHT_NO)
-        if (activitySharedPreferences.getInt("firstScreen", 0) > 0) {
-            changeFragment(UserRouteFragment(), com.example.kbway.R.id.contentContainer)
+            activitySharedPreferences.getInt("mode", 1)
+
+        if (activitySharedPreferences.getString(
+                "BackToSettings?",
+                "Go to routes"
+            ) == "Go back to settings"
+        ) {
+            sharedPreferencesEditor("BackToSettings?", "Go to routes")
+            changeFragment(SettingsFragment(), com.example.kbway.R.id.contentContainer)
         } else {
-            changeFragment(UserFirstFragment(), com.example.kbway.R.id.contentContainer)
+            if (activitySharedPreferences.getString("firstScreen", "0")!!.toInt() > 0) {
+                changeFragment(UserRouteFragment(), com.example.kbway.R.id.contentContainer)
+            } else {
+                changeFragment(UserFirstFragment(), com.example.kbway.R.id.contentContainer)
+            }
         }
     }
 
     override fun nightModeMail(mail: Int) {
+
         val editor3: SharedPreferences.Editor =
             this@RootActivity.getSharedPreferences(sharedActivityPreference, MODE_PRIVATE)
                 .edit()
         editor3.putInt("mode", mail)
         editor3.apply()
-        this.delegate.localNightMode =
-            this@RootActivity.getSharedPreferences(sharedActivityPreference, MODE_PRIVATE)
-                .getInt("mode", 1)
     }
 
     override fun firstScreenMail(mail: Int) {
-        val editor4: SharedPreferences.Editor =
+        sharedPreferencesEditor("firstScreen", mail.toString())
+    }
+
+    override fun backToSettingsScreenMail(mail: String) {
+        sharedPreferencesEditor("BackToSettings?", mail)
+    }
+
+    private fun sharedPreferencesEditor(mapName: String, value: String) {
+        val editor: SharedPreferences.Editor =
             this@RootActivity.getSharedPreferences(sharedActivityPreference, MODE_PRIVATE)
                 .edit()
-        editor4.putInt("firstScreen", mail)
-        editor4.apply()
+        editor.putString(mapName, value)
+        editor.apply()
     }
 }

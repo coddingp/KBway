@@ -34,7 +34,7 @@ class UserMapFragment : Fragment() {
 
     private lateinit var client: FusedLocationProviderClient
     private lateinit var binding: UserMapBinding
-    private lateinit var myLocation: LatLng
+//    private lateinit var myLocation: LatLng
 
     //inflating Fragment with MapLayout
     override fun onCreateView(
@@ -143,6 +143,13 @@ class UserMapFragment : Fragment() {
                 }
             }
         }
+        binding.bottomButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.goBackImageView.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         binding.gpsButton.setOnClickListener {
             binding.gpsButton.setImageResource(R.drawable.ic_gps_enabled)
             val zoomedFragment =
@@ -196,7 +203,7 @@ class UserMapFragment : Fragment() {
     }
 
     private fun getCurrentLocation(): LatLng {
-        myLocation = LatLng(42.797655661005464, 73.85801008276300)
+        var myLocation = LatLng(42.797655661005464, 78.85801008276300)
         //Checking permission
         if (ActivityCompat.checkSelfPermission(
                 activity as AppCompatActivity,

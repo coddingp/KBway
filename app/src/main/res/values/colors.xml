@@ -12,4 +12,5 @@
     <color name="light_green">#78DC8E</color>
     <color name="gray_card_view">#EEEEEE</color>
     <color name="dark_white">#E4E4E4</color>
+    <color name="drop_shadow">#40000000</color>
 </resources>

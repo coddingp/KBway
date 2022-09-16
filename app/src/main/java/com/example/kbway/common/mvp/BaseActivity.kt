@@ -17,7 +17,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun clearBackStack() {
         val manager = supportFragmentManager
-        if (manager.backStackEntryCount > 1) {
+        if (manager.backStackEntryCount > 0) {
             val firstFragment = manager.getBackStackEntryAt(0)
             manager.popBackStack(firstFragment.id, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         }

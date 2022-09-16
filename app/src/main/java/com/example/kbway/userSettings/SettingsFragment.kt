@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.kbway.BackToSettingsScreenMail
 import com.example.kbway.NightModeMail
 import com.example.kbway.R
 import com.example.kbway.common.mvp.BaseFragment
@@ -69,7 +70,10 @@ class SettingsFragment : BaseFragment(R.layout.user_route) {
                     (activity as NightModeMail).nightModeMail(AppCompatDelegate.MODE_NIGHT_YES)
                 } catch (ignored: ClassCastException) {
                 }
-
+                try {
+                    (activity as BackToSettingsScreenMail).backToSettingsScreenMail("Go back to settings")
+                } catch (ignored: ClassCastException) {
+                }
             } else {
 
                 (activity as AppCompatActivity).delegate.localNightMode =
@@ -89,6 +93,10 @@ class SettingsFragment : BaseFragment(R.layout.user_route) {
 
                 try {
                     (activity as NightModeMail).nightModeMail(AppCompatDelegate.MODE_NIGHT_NO)
+                } catch (ignored: ClassCastException) {
+                }
+                try {
+                    (activity as BackToSettingsScreenMail).backToSettingsScreenMail("Go back to settings")
                 } catch (ignored: ClassCastException) {
                 }
             }

@@ -26,7 +26,10 @@ class UserFirstFragment : BaseFragment(R.layout.user_first_screen) {
     override fun onResume() {
         super.onResume()
         binding.startUserTextView.setOnClickListener {
-            changeFragment(UserRouteFragment(), R.id.contentContainer)
+            changeFragment(
+                UserRouteFragment(),
+                R.id.contentContainer
+            )
         }
     }
 

@@ -48,4 +48,6 @@
     <string name="white_panel">White panel</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kbway_app_icon">KbWay app icon</string>
+    <string name="background_gradient">Background gradient</string>
 </resources>
