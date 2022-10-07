@@ -245,6 +245,7 @@ class UserMapFragment : Fragment(), LocationListener {
                                         )
                                     )
                                     .title("Вы находитесь здесь!")
+                                        //данные приходят когда захотят, но приходят
                                     .icon(bitmapDescriptorFromVector(R.drawable.ic_user_location))
                             )
                             val startCamera =
