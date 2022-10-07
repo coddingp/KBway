@@ -20,7 +20,6 @@ class RouteViewHolder(
         ), onClick
     )
 
-
     fun bindItem(buttonData: AllRouteData.AllRouteDataItem) {
         binding.routeTextView.text = "Маршрут - ${buttonData.routeNumber}"
         binding.routeTextView.setOnClickListener {
